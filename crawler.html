@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<scripy type="text/javascript" src="crawler.js"></scripy>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<title>Crawler</title>
+	</head>
+	<body>
+		<p id="Crawler_title">Crawler 爬虫</p>
+		<button type="button">start</button>
+		<ul id="Crawler_output"></ul>
+		<p></p>
+		<script type="text/javascript">
+			var socket=io('http://localhost:3000');
+			socket.on('open',function(){
+				$('#Crawler_output').append($('<li>').text('已连接'));
+				
+			})
+			socket.on('output',function(json){
+				$('#p').text(json.str);
+			})
+			$('button').click(function(json){
+				$('#Crawler_output').append($('<p>').text(str));
+			})
+		
+		</script>
+	</body>
+</html>
