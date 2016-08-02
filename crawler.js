@@ -68,8 +68,7 @@ io.on('output',function(){
   socket.broadcast.emit('output',str);
 })
 app.listen(3000,function(){
-	console.log('Server begin...')
-  
+	console.log('Server begin...');
 })
 }
 crawler('http://www.imooc.com/learn/348');
